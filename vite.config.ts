@@ -3,9 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  define: {
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
-  },
+  // Cloud Run上でのランタイム環境変数注入に対応するため、ビルド時のdefineを削除
   build: {
     outDir: 'dist',
     emptyOutDir: true
